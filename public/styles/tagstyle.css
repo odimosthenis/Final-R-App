@@ -1,0 +1,95 @@
+#tagschangefield{
+    padding: 10px 20px;
+    display: inline-block
+}
+
+#tagschangefield legend{
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#tagschangefield .tagoption{
+    display: flex;
+    flex-wrap: nowrap;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+#tagschangefield .name{
+    padding: 0 5px;
+    border: 1px solid gray;
+    border-right: 1px solid grey;
+    display: flex;
+    max-width: 200px;
+    width: 200px;
+    text-align: center;
+    overflow: auto;
+
+}
+
+#tagschangefield .name input{
+    width: 200px;
+    border: 0;
+    outline:0;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    text-align: center;
+}
+
+#tagschangefield .del{
+    border-radius: 0 4px 4px 0;
+    padding: 5px 5px 3px;
+    border: 1px solid gray;
+	background:linear-gradient(to bottom, #ff2424 5%, #ff1414 100%);
+	cursor:pointer;
+    color: white;
+}
+
+#tagschangefield img{
+    filter: invert(100%);
+}
+
+#tagschangefield .del:hover, #addTagContainer .addbtn:hover{
+    filter: brightness(1.3);
+}
+
+#addTagContainer{
+    display: flex;
+    flex-wrap: nowrap;
+    border-radius: 4px;
+}
+
+#addTagContainer > div{
+    display: flex;
+    align-items: center;
+}
+
+#addTagContainer > div > div:first-child{
+    padding: 4px 4px 4px 3px;
+}
+#addTagContainer > div> div:first-child input{
+    width: 200px;
+    border-right: 1px solid grey;
+    border: 0;
+    outline:0;
+}
+
+#addTagContainer > div > div{
+    padding: 4px 6px 3px;
+    border: 1px solid gray;
+}
+
+
+#addTagContainer .addbtn{
+    border-radius: 0 4px 4px 0;
+
+	background:linear-gradient(to bottom, #1eff00 5%, #00a716 100%);
+	cursor:pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+

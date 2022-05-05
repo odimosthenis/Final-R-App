@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+
+    <div class="wrapper">
+        <nav>
+            <%- include('./partials/nav.ejs') %>
+        </nav>
+        <main>
+            <fieldset id="tagschangefield">
+                <form action="/tags" method="POST" id="form1">
+                    <legend>+/- Tags</legend>
+                    <div id="mytags">
+                        <% mytags.list.forEach(element => { %>
+                        <div class="tagoption">
+                            <div class="name">
+                                <input readonly type="text" name="list[]" value=<%= element %> >
+                            </div>
+                            <div class="del">
+                                <img alt="'delete" src="/images/bin2.png">
+                            </div>
+                        </div>
+                        <% }); %>
+                    </div>
+                </form>
+                <hr>
+                <div id="addTagContainer">
+                    <div>
+                        <div>
+                            <input type="text">
+                        </div>
+                        <div class="addbtn">
+                            <span>✚</span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" form="form1" class="subtn" id="submitTagChange"> Submit </button>
+                <button onclick="(()=>{window.location.href='/tags'})()" class="subtn" id="resetTagChange"> Reset </button>
+            </fieldset>
+        </main>
+    </div>
+
+<script src="/js/tags.js"></script>
+
+<div style="display:none;" class="tagoption template">
+    <div class="name">
+        <input readonly type="text" name="list[]" value=''>
+    </div>
+    <div class="del">
+        <img alt="'delete" src="/images/bin2.png">
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<fieldset class="addFields" >
+    <legend>Record</legend>
+    <label for="directLink">direct link:</label>
+    <br>
+    <div class="editablecontainer">
+        <input readonly type="text" id="directLink" name="directLink" value=<%= record.directLink %>>
+        <!--<img class="edit" src="/images/edit.png">-->
+    </div>
+    <br>
+    <label for="mirrorLink">mirror (archived) link:</label><br>
+    <div class="editablecontainer">
+        <input readonly type="text" id="mirrorLink" name="mirrorLink" value=<%= record.mirrorLink %>>
+        <img class="edit" src="/images/edit.png">
+    </div>
+    <br>
+    <div class="editablecontainer n" readonly>
+        <fieldset class="tagsField">
+            <legend>myTags</legend>
+            <div id="tags">
+                <% if(record.tags.length > 0) %>
+                <% record.tags.forEach(element => { %>
+                <div class="tagcont">
+                    <input style="display:none" type="checkbox" name="tags[]" value="<%= element %>">
+                    <label for="tags[]"> <%= element %></label><br>
+                </div>
+                <% }); %>
+            </div>
+        </fieldset>
+        <div>
+            <img class="edit" src="/images/edit.png">
+        </div>
+    </div>
+    <div id="allTags" class="noneDisplay">
+        <fieldset class="tagsField">
+            <legend>myTags</legend>
+            <div id="tags">
+                <% if(mytags.length > 0 && mytags.list) %>
+                <% mytags.list.forEach(element => { %>
+                <div class="tagcont">
+                    <input type="checkbox" id="<%= element %>" name="tags[]" value="<%= element %>">
+                    <label for="tags[]"> <%= element %></label><br>
+                </div>
+                <% }); %>
+            </div>
+        </fieldset>
+    </div>
+    
+    <br>
+    <label for="comments">comments:</label><br>
+    <div class="editablecontainer">
+        <textarea readonly rows="4" id="comments" name="comments" placeholder="comments.." ><%= record.comments %></textarea> 
+        <div>
+            <img class="edit" src="/images/edit.png">
+        </div>
+    </div>
+    <br>
+    <button class="subtn noneDisplay" id="submitRecord" data-record="<%= record._id %>"> Submit </button>
+    <button class="subtn noneDisplay" data-redir='/records/<%= record._id %>' id="resetRecord"> Cancel </button>
+    <button class="subtn" id="delete" data-record="<%= record._id %>">Delete</button>
+</fieldset>

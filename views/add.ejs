@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+
+    <div class="wrapper">
+        <nav>
+            <%- include('./partials/nav.ejs') %>
+        </nav>
+        <main>
+            <form action="/records/add" method="POST" > 
+                <%- include('./partials/recordAddTemplate.ejs') %>
+                <br><br>     
+            </form>              
+        </main>
+    </div>
+
+</body>
+</html>

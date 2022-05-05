@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+
+    <div class="wrapper">
+        <nav>
+            <%- include('./partials/nav.ejs') %>
+        </nav>
+
+        <main>
+            <div class="records">
+                <h2>Records:</h2>
+                <% records.forEach(record => { %>
+                    <%- include('./partials/recordTemplate.ejs',{record:record}) %>
+
+                    <br><br>
+                <% }); %>
+            </div>
+        </main>
+        
+    </div>
+
+</body>
+</html>

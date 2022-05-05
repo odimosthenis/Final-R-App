@@ -1,0 +1,34 @@
+.editablecontainer{
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+    align-items:flex-start;
+}
+
+.tagsField + div {
+    padding-top: 7px;
+}
+
+.editablecontainer .tagsField {
+    padding: 5px 0 5px 0;
+}
+
+.editablecontainer #tags{
+    padding: 3px 5px;
+}
+
+.editablecontainer input,
+ .editablecontainer textarea,
+ .editablecontainer .tagsField
+ {
+    width: 200px;
+    max-width: 200px;
+}
+
+.noneDisplay{
+    display: none;
+}
+
+.edit{
+    cursor: pointer;
+}

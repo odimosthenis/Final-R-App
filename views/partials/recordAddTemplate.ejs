@@ -1,0 +1,29 @@
+<fieldset class="addFields" >
+    <legend>Add Record</legend>
+    <label for="directLink">direct link:</label><br>
+    <input type="text" id="directLink" name="directLink"><br><br>
+    <label for="mirrorLink">mirror (archived) link:</label><br>
+    <input type="text" id="mirrorLink" name="mirrorLink"><br><br>
+    <fieldset class="tagsField">
+        <legend>myTags</legend>
+        <div id="tags">
+            <% if(mytags.length > 0 && mytags.list) %>
+            <% mytags.list.forEach(element => { %>
+            <div class="tagcont">
+                <input type="checkbox" id="<%= element %>" name="tags[]" value="<%= element %>">
+                <label for="tags[]"> <%= element %></label><br>
+            </div>
+            <% }); %>
+        </div>
+    </fieldset>
+    <br>
+    <label for="comments">comments:</label><br>
+    <textarea rows="4" id="comments" name="comments" placeholder="comments.."></textarea> <br><br>
+    <button class="subtn" id="submitRecord"> Submit </button>
+    <button class="subtn" id="resetRecord"> Reset </button>
+    <script>
+        document.querySelector('#resetRecord').addEventListener('click',(e)=>{
+            e.preventDefault()
+            window.location.href='/records/add'})
+    </script>
+</fieldset>
